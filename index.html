@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake Game Pro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Intro Screen -->
+  <div id="introScreen" class="intro">
+    <h1 onclick="hideIntro()">PRESS START</h1>
+    <p id="coinCounter">INSERT COIN: 0</p>
+    <button id="freePlayBtn" onclick="toggleFreePlay()">FREE PLAY: OFF</button>
+  </div>
+
+  <!-- Start Menu -->
+  <div id="startMenu" class="menu" style="display:none;">
+    <h2>Enter Your Name</h2>
+    <input type="text" id="playerNameInput" placeholder="Player Name">
+    <button onclick="startGame()">Start Game</button>
+  </div>
+
+  <!-- Game Area -->
+  <div id="gameContainer" style="display:none; position: relative;">
+    <div class="controls">
+      <button onclick="newGame()">New Game</button>
+      <button onclick="togglePause()">Resume / Pause</button>
+      <button onclick="toggleSound()">🔊 Sound: ON</button>
+      <button onclick="toggleMusic()">🎶 Music: ON</button>
+    </div>
+
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+
+    <div class="scoreboard">
+      <p id="playerName">Player: Guest</p>
+      <p id="score">Score: 0</p>
+      <p id="highScore">High Score: 0</p>
+      <p id="level">Level: 1</p>
+    </div>
+
+    <div id="freePlayWatermark">FREE PLAY</div>
+
+    <!-- Leaderboard -->
+    <div class="leaderboard">
+      <h3>🏆 Leaderboard</h3>
+      <ol id="leaderboardList"></ol>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
